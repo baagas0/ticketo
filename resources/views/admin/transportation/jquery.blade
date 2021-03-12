@@ -1,0 +1,22 @@
+                  var table = new $.fn.dataTable.Api('.table');
+                  var cell = table.cell('td.focus');
+                  var cellData = cell.data();
+                  
+                  var div = document.createElement('div');
+                  div.innerHTML = cellData;
+                  var a = div.childNodes;
+                  a.innerHTML = newValue;
+
+                  // Get Editable Data ----------------------
+                  console.log('Value = '+a.innerHTML);
+
+                  var div1 = document.createElement('div');
+                  var cell1 = table.cell('td.id');
+                  div1.innerHTML = cellData;
+                  var cellData1 = cell1.data();
+
+                  // Get ID Data ----------------------------
+                  console.log('ID = ' +cellData1);
+                  
+                  console.log('jml a new ' + a);
+                  cell.data(a.innerHTML);
