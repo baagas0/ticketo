@@ -9,7 +9,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo-small.png') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -35,11 +35,11 @@
                                     <div>
                                         <div class="text-center">
                                             <div>
-                                                <a href="index.html" class="logo"><img src="{{ asset('assets/admin/images/logo-dark.png') }}" height="20" alt="logo"></a>
+                                                <a href="index.html" class="logo"><img src="{{ asset('images/logo-small.png') }}" height="70" alt="logo"></a>
                                             </div>
 
                                             <h4 class="font-size-18 mt-4">Welcome Back !</h4>
-                                            <p class="text-muted">Sign in to continue to Nazox.</p>
+                                            <p class="text-muted">Sign in to continue to {{ config('app.name') }}.</p>
                                         </div>
 
                                         <div class="p-2 mt-5">
@@ -77,16 +77,12 @@
                                                 <div class="mt-4 text-center">
                                                     <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
                                                 </div>
-
-                                                <div class="mt-4 text-center">
-                                                    <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
-                                                </div>
                                             </form>
                                         </div>
 
                                         <div class="mt-5 text-center">
-                                            <p>Don't have an account ? <a href="auth-register.html" class="font-weight-medium text-primary"> Register </a> </p>
-                                            <p>© 2020 Nazox. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</p>
+                                            
+                                            <p>© 2021 {{ config('app.name') }}. All right reserve</p>
                                         </div>
                                     </div>
 
@@ -96,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="authentication-bg">
+                    <div class="authentication-bg" style="background-image: url({{ asset(Setting('login-image')->image) }})!important">
                         <div class="bg-overlay"></div>
                     </div>
                 </div>

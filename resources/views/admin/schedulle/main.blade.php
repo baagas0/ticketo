@@ -34,6 +34,7 @@ use Carbon\Carbon;
 								<th>Economy Price</th>
 								<th>Bussiness Price</th>
 								<th>First Price</th>
+								<th>Pessenger</th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -49,7 +50,11 @@ use Carbon\Carbon;
 								<th scope="row">{{ $row->id }}</th>
 								<td>{{ $transportation->name }}</td>
 								<td>{{ $transportation->economy_seat.' Economy | '.$transportation->bussiness_seat.' Bussiness | '.$transportation->first_seat.' First' }}</td>
-								<td>{{ $transportation->economy_seat.' Economy | '.$transportation->bussiness_seat.' Bussiness | '.$transportation->first_seat.' First' }}</td>
+
+
+								<td>{{ Seat($row->id)['economy'].' Economy | '.Seat($row->id)['bussiness'].' Bussiness | '.Seat($row->id)['first'].' First' }}</td>
+
+
 								<td>{{ Carbon::parse($row->date)->format('d M Y') }}</td>
 								<td>{{ Carbon::parse($row->date)->format('H:i') }}</td>
 								<td>{{ $from->name.' ('.$from->country.')' }}</td>
@@ -57,6 +62,14 @@ use Carbon\Carbon;
 								<td>IDR {{ number_format($row->economy_price) }}</td>
 								<td>IDR {{ number_format($row->bussiness_price) }}</td>
 								<td>IDR {{ number_format($row->first_price) }}</td>
+								<td>
+									<a href="{{ route('admin.schedulle.update', $row->id) }}" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+										<button type="button" class="btn btn-info waves-effect waves-light">
+											<i class="mdi mdi-arrow-right font-size-18"></i>
+											Show Pessenger
+										</button>
+									</a>
+								</td>
 								<td>
 									<a href="{{ route('admin.schedulle.update', $row->id) }}" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
 										<i class="mdi mdi-pencil font-size-18"></i>

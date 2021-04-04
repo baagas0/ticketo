@@ -21,7 +21,7 @@
                 <li><a href="{{ route('user.login') }}">Login</a></li>
                 <li><a href="{{ route('user.register') }}">Register</a></li>
                 @endif
-                <li><a href="#tg-search"><img src="{{ asset('images/icons/icon-04.png') }}" alt="image destinations"></a></li>
+                {{-- <li><a href="#tg-search"><img src="{{ asset('images/icons/icon-04.png') }}" alt="image destinations"></a></li> --}}
             </ul>
         </nav>
         <div class="tg-navigationarea">

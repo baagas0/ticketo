@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedulle extends Model
 {
+
+    public function tour()
+    {
+        return $this->belongsTo('App\Tour', 'id', 'schedulle_id');
+    }
+
     public function transportation()
     {
         return $this->belongsTo('App\Transportation', 'transportation_id');

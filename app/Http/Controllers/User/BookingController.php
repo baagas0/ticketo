@@ -8,6 +8,7 @@ use App\Booking;
 use App\Schedulle;
 use App\Payment;
 use Facades\Services\TripayService;
+use PDF;
 
 class BookingController extends Controller
 {
@@ -122,5 +123,30 @@ class BookingController extends Controller
         Booking::find($booking->id)->update(['reference' => $tripay['reference']]);
 
         return redirect()->route('user.booking.detail', $booking->id);
+    }
+
+    public function boarding($id)
+    {
+        $booking = Booking::with('schedulle')->findOrFail($id);
+        $tripay = TripayService::detail($booking->reference);
+
+        $type = $booking->type;
+
+        switch ($type) {
+            case 'Economy':
+                $price = $booking->schedulle->economy_price;
+                break;
+            case 'Bussiness':
+                $price = $booking->schedulle->bussiness_price;
+                break;
+            case 'First':
+                $price = $booking->schedulle->first_price;
+                break;
+            default:
+                $price = $booking->schedulle->economy_price;
+                break;
+        }
+
+        return view('user.main.booking.boarding-pass', compact('booking', 'tripay', 'price'));
     }
 }

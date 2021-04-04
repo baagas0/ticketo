@@ -23,6 +23,13 @@
             </div>
             <div class="tg-box tg-contactdetail">
                 <div class="tg-dashboardcontent">
+                    <h3>Boarding Pass</h3>
+                    <a href="{{ route('user.booking.boarding', $booking->id) }}" style="color: #ffffff;background-color: #ff7550" class="btn btn-lg" target="__blank">Print Boarding
+                    </a>
+                </div>
+            </div>
+            <div class="tg-box tg-contactdetail">
+                <div class="tg-dashboardcontent">
                     <h3>Contact Detail</h3>
                     <div class="tg-content">
                         <ul class="tg-liststyle">
@@ -39,7 +46,7 @@
                     <h3>Instructions</h3>
                     <div class="tg-content">
                         @if(isset($tripay['qr_url']))
-                            <center><img src="{{ $tripay['qr_url'] }}" width="180px" class="align-items-center"></center>
+                        <center><img src="{{ $tripay['qr_url'] }}" width="180px" class="align-items-center"></center>
                         @endif
                         <ul>
                             @foreach($tripay['instructions'][0]['steps'] as $step)
@@ -61,7 +68,7 @@
                                 <li><span>Number of Person</span><em>{{ number_format($booking->number_of_person) }}</em></li>
                                 <li class="tg-totalprice">
                                     <div class="tg-totalpayment"><span>Total
-                                            Price</span><em>{{ number_format($booking->total, 2) }}</em></div>
+                                    Price</span><em>{{ number_format($booking->total, 2) }}</em></div>
                                 </li>
                             </ul>
                         </div>

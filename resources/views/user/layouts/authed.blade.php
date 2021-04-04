@@ -39,11 +39,17 @@
 										<div class="tg-widgetcontent">
 											<ul>
 												<li><a href="{{ route('user.home') }}"><i class="icon-user"></i><span>Dashboard</span></a></li>
-												<li><a href="my-profile.html"><i class="icon-pen2"></i><span>Edit Profile</span></a></li>
-												<li><a href="change-password.html"><i class="icon-lock-open3"></i><span>Change Password</span></a></li>
+
+												<li>
+													<a href="https://gravatar.com" target="__blank"><i class="icon-pen2"></i><span>Edit Avatar</span></a>
+												</li>
+
 												<li><a href="{{ route('user.booking.index') }}"><i class="icon-basket3"></i><span>My Booking</span></a></li>
-												<li><a href="my-wish-list.html"><i class="icon-heart"></i><span>Wish List</span></a></li>
-												<li><a href="#"><i class="icon-lock"></i><span>Sign Out</span></a></li>
+
+												<li><a href="{{ route('user.logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                    <i class="icon-lock"></i><span>Sign Out</span></a></li>
 											</ul>
 										</div>
 									</div>

@@ -2,6 +2,7 @@
 use App\Setting;
 use App\Schedulle;
 use App\Tour;
+use App\Booking;
 
 if (!function_exists('routeController')) {
 
@@ -112,5 +113,30 @@ if (!function_exists('destination')) {
                         ->get();
 
         return $destination;
+    }
+}
+
+if (!function_exists('seat')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function seat($schedulle_id)
+    {
+        $schedulle = Schedulle::findOrFail($schedulle_id);
+
+        $economy_booked_amount = Booking::where('schedulle_id', $schedulle_id)->where('type', 'Economy')->count();
+        $data['economy'] = $schedulle->transportation->economy_seat - $economy_booked_amount;
+
+        $bussiness_booked_amount = Booking::where('schedulle_id', $schedulle_id)->where('type', 'Bussiness')->count();
+        $data['bussiness'] = $schedulle->transportation->bussiness_seat - $bussiness_booked_amount;
+
+        $first_booked_amount = Booking::where('schedulle_id', $schedulle_id)->where('type', 'First')->count();
+        $data['first'] = $schedulle->transportation->first_seat - $first_booked_amount;
+
+        return $data;
     }
 }

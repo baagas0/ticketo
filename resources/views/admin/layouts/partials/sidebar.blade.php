@@ -17,8 +17,14 @@
                 </li>
 
                 <li class="menu-title">Orders</li>
-
                 <li>
+                    <a href="{{ route('admin.booking') }}" class="waves-effect">
+                        <i class="ri-bookmark-3-line"></i>
+                        <span>Ticket</span>
+                    </a>
+                </li>
+
+                <li style="display: none;">
                     <a href="{{ route('admin.dashboard') }}" class="waves-effect">
                         <i class="ri-shopping-cart-2-line"></i><span class="badge badge-pill badge-success float-right">3</span>
                         <span>Ticket</span>
@@ -40,7 +46,6 @@
                         <span>Rute</span>
                     </a>
                 </li>
-                </li>
 
                 <li>
                     <a href="{{ route('admin.schedulle') }}" class="waves-effect">
@@ -48,6 +53,8 @@
                         <span>Schedulle</span>
                     </a>
                 </li>
+
+                <li class="menu-title">Master Data</li>
 
                 <li>
                     <a href="{{ route('admin.airport') }}" class="waves-effect">
@@ -68,12 +75,9 @@
                         <span>Type Transportation</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('admin.booking') }}" class="waves-effect">
-                        <i class="ri-bookmark-3-line"></i>
-                        <span>Booking</span>
-                    </a>
-                </li>
+
+                <li class="menu-title">Payment</li>
+
                 <li>
                     <a href="{{ route('admin.payment') }}" class="waves-effect">
                         <i class="ri-money-cny-circle-line"></i>
@@ -81,7 +85,7 @@
                     </a>
                 </li>
 
-                <li class="menu-title">Settings</li>
+                {{-- <li class="menu-title">Settings</li>
 
                 <li>
                     <a href="{{ route('admin.dashboard') }}" class="waves-effect">
@@ -95,7 +99,7 @@
                         <i class="ri-notification-badge-line"></i>
                         <span>Notification</span>
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

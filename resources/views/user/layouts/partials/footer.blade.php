@@ -84,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p>Copyright &copy; 2017 Travlu. All  rights reserved</p>
+                    <p>Copyright &copy; 2021 Ticketo. All  rights reserved</p>
                 </div>
             </div>
         </div>

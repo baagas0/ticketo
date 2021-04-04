@@ -14,5 +14,6 @@ class DemoSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(SliderSeeder::class);
         $this->call(TourSeeder::class);
+        $this->call(BookingSeeder::class);
     }
 }

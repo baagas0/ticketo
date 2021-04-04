@@ -15,19 +15,19 @@ class TourSeeder extends Seeder
         Tour::create([
         	'schedulle_id'	=> 3132,
         	'image'			=> 'images/slider/img-01.jpg',
-        	'title'			=> 'City Tours in Europe, Paris',
+        	'title'			=> 'City Tours in Surabaya, Indonesia',
         	'description'	=> 'You Choose the Adventure We make it happen',
         ]);
         Tour::create([
-            'schedulle_id'  => 3132,
+            'schedulle_id'  => 3133,
             'image'         => 'images/slider/img-02.jpg',
-            'title'         => 'City Tours in Sydney, Paris',
+            'title'         => 'City Tours in Rome, Italy',
             'description'   => 'You Choose the Adventure We make it happen',
         ]);
         Tour::create([
-            'schedulle_id'  => 3132,
+            'schedulle_id'  => 3134,
             'image'         => 'images/slider/img-03.jpg',
-            'title'         => 'City Tours in Singapore, Paris',
+            'title'         => 'City Tours in Newark, US',
             'description'   => 'You Choose the Adventure We make it happen',
         ]);
     }

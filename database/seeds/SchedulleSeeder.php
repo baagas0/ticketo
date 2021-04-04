@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Schedulle;
 use App\Helpers\Calc;
+use Carbon\Carbon;
 
 class SchedulleSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
         	'transportation_id'	=> 1,
-        	'date'				=> '2021-03-12 22:52:10',
+        	'date'				=> Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/surabaya.png',
         	'from_code'			=> 84,
         	'destination_code'	=> 252,
@@ -36,7 +37,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 2,
-            'date'              => '2021-03-10 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Fiumicino.jpg',
             'from_code'         => 85,
             'destination_code'  => 23,
@@ -52,7 +53,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 2,
-            'date'              => '2021-03-15 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Newark Liberty Intl.jpg',
             'from_code'         => 86,
             'destination_code'  => 45,
@@ -68,7 +69,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 3,
-            'date'              => '2021-03-15 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Chicago Ohare Intl.jpg',
             'from_code'         => 1,
             'destination_code'  => 2,
@@ -84,7 +85,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 2,
-            'date'              => '2021-03-13 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Heathrow.jpg',
             'from_code'         => 3,
             'destination_code'  => 4,
@@ -100,7 +101,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 2,
-            'date'              => '2021-03-15 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Los Angeles Intl.jpg',
             'from_code'         => 5,
             'destination_code'  => 6,
@@ -116,7 +117,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 3,
-            'date'              => '2021-03-15 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Dallas Fort Worth Intl.JPG',
             'from_code'         => 7,
             'destination_code'  => 8,
@@ -132,7 +133,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 2,
-            'date'              => '2021-03-10 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Schiphol.jpg',
             'from_code'         => 9,
             'destination_code'  => 10,
@@ -148,7 +149,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 2,
-            'date'              => '2021-03-15 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Changi Intl.jpg',
             'from_code'         => 11,
             'destination_code'  => 12,
@@ -164,7 +165,7 @@ class SchedulleSeeder extends Seeder
                  ]);
         Schedulle::create([
             'transportation_id' => 3,
-            'date'              => '2021-03-15 22:52:10',
+            'date'              => Carbon::parse('now')->addDays('+2'),
             'image'             => 'images/schedulle/Changi Intl seoul.jpg',
             'from_code'         => 13,
             'destination_code'  => 14,

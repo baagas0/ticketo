@@ -35,9 +35,9 @@ class Calc
 
 		$transportation = Transportation::findOrFail($data['idTransportation']);
 
-		$economy_price 		= ($distance * $transportation->economy_price);
-		$bussiness_price 	= ($distance * $transportation->bussiness_price);
-		$first_price 		= ($distance * $transportation->first_price);
+		$economy_price 		= round($distance * $transportation->economy_price);
+		$bussiness_price 	= round($distance * $transportation->bussiness_price);
+		$first_price 		= round($distance * $transportation->first_price);
 
 		$response = [
 			'distance'			=> $distance." km",

@@ -14,6 +14,7 @@ class PaymentSeeder extends Seeder
     public function run()
     {
         $channels = TripayService::channel();
+        // dd($channels);
         if ($channels) {
             foreach ($channels as $channel) {
                 Payment::updateOrCreate([

@@ -34,6 +34,10 @@ Route::group(['namespace' => 'User'], function() {
         Route::group(['prefix' => 'booking', 'as' => 'booking.'], function() {
             Route::get('/', 'BookingController@index')->name('index');
             Route::get('/{id}/detail', 'BookingController@detail')->name('detail');
+
+            Route::get('/{id}/boarding-pass', 'BookingController@boarding')->name('boarding');
+
+
             Route::get('/{schedule}/checkout', 'BookingController@checkout')->name('checkout');
             Route::post('/{schedule}/pay', 'BookingController@pay')->name('pay');
         });

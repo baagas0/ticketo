@@ -9,7 +9,9 @@
                 <a class="tg-btnedit" href="my-profile.html">Edit Profile</a>
             </div>
             <div class="tg-dashboardcontent">
-                <figure><img src="/images/authorimg.jpg" alt="image description"></figure>
+                <figure>
+                    <img src="{{ Gravatar::fallback(asset('images/user.png'))->get('baagas0@gmail.caom') }}" style="width: 80px" alt="image description">
+                </figure>
                 <div class="tg-content">
                     <ul class="tg-liststyle">
                         <li><span>Name</span></li>

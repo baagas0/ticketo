@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('ticket');
             $table->date('order_date');
             $table->date('order_place');
-            $table->integer('pessenger_id');
+            $table->foreignId('pessenger_id');
             $table->integer('chair_number');
             $table->integer('rute_id');
             $table->integer('destination');

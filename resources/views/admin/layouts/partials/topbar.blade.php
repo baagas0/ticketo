@@ -5,19 +5,19 @@
             <div class="navbar-brand-box">
                 <a href="{{ route('admin.dashboard') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/admin/images/logo-sm-dark.png') }}" alt="" height="22">
+                        <img src="{{ asset('images/logo5.png') }}" alt="" height="60">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/admin/images/logo-dark.png') }}" alt="" height="20">
+                        <img src="{{ asset('images/logo5.png') }}" alt="" height="50">
                     </span>
                 </a>
 
                 <a href="{{ route('admin.dashboard') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/admin/images/logo-sm-light.png') }}" alt="" height="22">
+                        <img src="{{ asset('images/logo5.png') }}" alt="" height="60">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/admin/images/logo-light.png') }}" alt="" height="20">
+                        <img src="{{ asset('images/logo5.png') }}" alt="" height="50">
                     </span>
                 </a>
             </div>
@@ -27,12 +27,7 @@
             </button>
 
             <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
-                <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="Search...">
-                    <span class="ri-search-line"></span>
-                </div>
-            </form>
+            
         </div>
 
         <div class="d-flex">
