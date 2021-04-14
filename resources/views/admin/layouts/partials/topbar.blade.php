@@ -70,7 +70,7 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
                     {{-- <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right mt-1">11</span><i class="ri-settings-2-line align-middle mr-1"></i> Settings</a> --}}
-                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider"></div> 
                     <a class="dropdown-item text-danger" href="{{ route('admin.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout</a>
