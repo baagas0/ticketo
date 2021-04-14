@@ -128,6 +128,10 @@ class BookingController extends Controller
     public function boarding($id)
     {
         $booking = Booking::with('schedulle')->findOrFail($id);
+
+        if ($booking->status == 0) {
+            return 'Please Close Tab & Finish Your Payment To Print A Boarding Pass!!';
+        }
         $tripay = TripayService::detail($booking->reference);
 
         $type = $booking->type;

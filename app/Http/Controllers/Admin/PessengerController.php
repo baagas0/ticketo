@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class PessengerController extends Controller
 {
-    //
+    public function getSchedulle(Request $request, $id)
+    {
+        return $id;
+    }
 }

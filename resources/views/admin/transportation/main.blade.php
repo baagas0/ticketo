@@ -102,7 +102,7 @@
 						<div class="form-group">
 							<label>Economy Seat</label>
 							<div class="input-group">
-								<input type="text" class="form-control" id="add_economy_seat" name="add_economy_seat" value="">
+								<input type="number" class="form-control" id="add_economy_seat" name="add_economy_seat" value="">
 								<div class="input-group-append">
 									<span class="input-group-text">Seat</span>
 								</div>
@@ -117,7 +117,7 @@
 						<div class="form-group">
 							<label>Bussiness Seat</label>
 							<div class="input-group">
-								<input type="text" class="form-control add_bussiness_seat" id="add_bussiness_seat" name="add_bussiness_seat" value="">
+								<input type="number" class="form-control add_bussiness_seat" id="add_bussiness_seat" name="add_bussiness_seat" value="">
 								<div class="input-group-append bussiness_seat">
 									<span class="input-group-text">Seat</span>
 								</div>
@@ -132,7 +132,7 @@
 						<div class="form-group">
 							<label>First Seat</label>
 							<div class="input-group">
-								<input type="text" class="form-control add_first_seat" id="add_first_seat" name="add_first_seat" value="">
+								<input type="number" class="form-control add_first_seat" id="add_first_seat" name="add_first_seat" value="">
 								<div class="input-group-append first_seat">
 									<span class="input-group-text">Seat</span>
 								</div>
@@ -149,7 +149,7 @@
 						<div class="form-group">
 							<label>Economy Price</label>
 							<div class="input-group">
-								<input type="text" class="form-control" id="add_economy_price" name="add_economy_price" value="">
+								<input type="number" class="form-control" id="add_economy_price" name="add_economy_price" value="">
 								<div class="input-group-append">
 									<span class="input-group-text">/Km</span>
 								</div>
@@ -164,7 +164,7 @@
 						<div class="form-group">
 							<label>Bussiness Price</label>
 							<div class="input-group">
-								<input type="text" class="form-control" id="add_bussiness_price" name="add_bussiness_price" value="">
+								<input type="number" class="form-control" id="add_bussiness_price" name="add_bussiness_price" value="">
 								<div class="input-group-append">
 									<span class="input-group-text">/Km</span>
 								</div>
@@ -179,7 +179,7 @@
 						<div class="form-group">
 							<label>First Price</label>
 							<div class="input-group">
-								<input type="text" class="form-control" id="add_first_price" name="add_first_price" value="">
+								<input type="number" class="form-control" id="add_first_price" name="add_first_price" value="">
 								<div class="input-group-append">
 									<span class="input-group-text">/Km</span>
 								</div>
@@ -203,6 +203,21 @@
 @push('css')
 <!-- Sweet Alert-->
 <link href="{{ asset('assets/admin/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+
+<!-- Custom -->
+<style>
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+</style>
 
 <!-- DataTables -->
 <link href="{{ asset('assets/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />

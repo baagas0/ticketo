@@ -22,4 +22,4 @@ Route::group(['middleware' => 'auth:admin','prefix' => 'admin', 'as' => 'admin']
 
 });
 
-Route::post('callback', 'User/CallbackController@callback')->name('callback');
+Route::post('callback', 'User\CallbackController@callback')->name('callback');

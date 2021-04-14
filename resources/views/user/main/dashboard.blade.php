@@ -6,7 +6,7 @@
         <div class="tg-box tg-profile">
             <div class="tg-heading">
                 <h3>My Profile</h3>
-                <a class="tg-btnedit" href="my-profile.html">Edit Profile</a>
+                {{-- <a class="tg-btnedit" href="my-profile.html">Edit Profile</a> --}}
             </div>
             <div class="tg-dashboardcontent">
                 <figure>

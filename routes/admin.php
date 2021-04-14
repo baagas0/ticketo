@@ -3,6 +3,7 @@
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin', 'as' => 'admin.'], function() {
     routeController('ajax', 'Admin\AjaxController');
     routeController('dashboard', 'Admin\AdminController');
+    routeController('pessenger', 'Admin\PessengerController');
     routeController('schedulle', 'Admin\SchedulleController');
     routeController('airport', 'Admin\AirportController');
     routeController('transportation', 'Admin\TransportationController');

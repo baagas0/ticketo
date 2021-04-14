@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Schedulle;
+use App\Booking;
 use App\Transportation;
 use App\Airport;
 use Carbon\Carbon;
@@ -42,7 +43,7 @@ class SchedulleController extends Controller
     	return redirect()->route('admin.schedulle');
     }
 
-    public function getUpdate($id) {
+    public function getUpdater($id) {
     	$data['data'] = Schedulle::findOrFail($id);
     	$data['airportFrom'] = Airport::findOrFail($data['data']->from_code);
     	$data['airportTo'] = Airport::findOrFail($data['data']->destination_code);
@@ -74,5 +75,10 @@ class SchedulleController extends Controller
     	$delete = Schedulle::findOrFail($id);
     	$delete->delete();
     	return 'Data Delete Successfully';
+    }
+
+    public function getPessenger($id) {
+        $data['pessengers'] = Booking::where('schedulle_id', $id)->orderBy('created_at', 'DESC')->get();
+        return view('admin.schedulle.pessenger', $data);
     }
 }

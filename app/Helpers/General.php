@@ -3,6 +3,7 @@ use App\Setting;
 use App\Schedulle;
 use App\Tour;
 use App\Booking;
+use Carbon\Carbon;
 
 if (!function_exists('routeController')) {
 
@@ -138,5 +139,46 @@ if (!function_exists('seat')) {
         $data['first'] = $schedulle->transportation->first_seat - $first_booked_amount;
 
         return $data;
+    }
+}
+
+if (!function_exists('revenue')) {
+
+    /**
+     * description
+     *
+     * @param
+     * @return
+     */
+    function revenue()
+    {
+        $startYear = Carbon::parse('now')->format('Y');
+        $endYear = $startYear - 2;
+        // Now Year
+
+        for($y=$endYear;$y<=$startYear;$y++){
+            // dd($y);
+            $second = Booking::whereYear('created_at', $y)->get()->groupBy(function($date) {
+                return Carbon::parse($date->created_at)->format('m'); // grouping by months
+            });
+
+            $secondCount = [];
+            $response[$y] = [];
+            $response[$y]['year'] = $y;
+
+            foreach ($second as $key => $value) {
+                $secondCount[(int)$key] = count($value);
+            }
+
+            for($i = 1; $i <= 12; $i++){
+                if(!empty($secondCount[$i])){
+                    $response[$y][$i] = $secondCount[$i];    
+                }else{
+                    $response[$y][$i] = 0;    
+                }
+            }
+        }
+        
+        return $response;
     }
 }

@@ -33,7 +33,7 @@
                                 <td>{{ $booking->user->name }}</td>
                                 <td>{{ $booking->payment->name }}</td>
                                 <td>{{ $booking->schedulle->id }}</td>
-                                <td>{{ $booking->status }}</td>
+                                <td>{{ $booking->approval }}</td>
                                 <td>
                                     <a href="#" class="text-success approve" data-id="{{ $booking->id }}"
                                         data-toggle="tooltip" data-placement="top" title=""

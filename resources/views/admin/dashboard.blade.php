@@ -1,528 +1,289 @@
+@extends('admin.layouts.app')
+@section('title', 'International Airport Data')
+@section('content')
+<?php
+use App\Booking;
+?>
 <div class="row">
-			<div class="col-md-6 col-sm-6">
-				<div class="widget p-md clearfix">
-					<div class="pull-left">
-						<h3 class="widget-title">Welcome to Infinity</h3>
-						<small class="text-color">Number of views</small>
-					</div>
-					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp">102</span>
-				</div><!-- .widget -->
-			</div>
-
-			<div class="col-md-6 col-sm-6">
-				<div class="widget p-md clearfix">
-					<div class="pull-left">
-						<h3 class="widget-title">Active</h3>
-						<small class="text-color">Loads / contact</small>
-					</div>
-					<span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp">325</span>
-				</div><!-- .widget -->
-			</div>
-		</div><!-- .row -->
-
+	<div class="col-xl-8">
 		<div class="row">
-			<div class="col-md-3 col-sm-6">
-				<div class="widget stats-widget">
-					<div class="widget-body clearfix">
-						<div class="pull-left">
-							<h3 class="widget-title text-primary"><span class="counter" data-plugin="counterUp">66.136</span>k</h3>
-							<small class="text-color">Total loads</small>
-						</div>
-						<span class="pull-right big-icon watermark"><i class="fa fa-paperclip"></i></span>
-					</div>
-					<footer class="widget-footer bg-primary">
-						<small>% charge</small>
-						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[4,3,5,2,1], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
-					</footer>
-				</div><!-- .widget -->
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="widget stats-widget">
-					<div class="widget-body clearfix">
-						<div class="pull-left">
-							<h3 class="widget-title text-danger"><span class="counter" data-plugin="counterUp">3.490</span>k</h3>
-							<small class="text-color">Total Pending</small>
-						</div>
-						<span class="pull-right big-icon watermark"><i class="fa fa-ban"></i></span>
-					</div>
-					<footer class="widget-footer bg-danger">
-						<small>% charge</small>
-						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[1,2,3,5,4], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
-					</footer>
-				</div><!-- .widget -->
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="widget stats-widget">
-					<div class="widget-body clearfix">
-						<div class="pull-left">
-							<h3 class="widget-title text-success"><span class="counter" data-plugin="counterUp">8.378</span>k</h3>
-							<small class="text-color">Case Close</small>
-						</div>
-						<span class="pull-right big-icon watermark"><i class="fa fa-unlock-alt"></i></span>
-					</div>
-					<footer class="widget-footer bg-success">
-						<small>% charge</small>
-						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[2,4,3,4,3], { type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
-					</footer>
-				</div><!-- .widget -->
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<div class="widget stats-widget">
-					<div class="widget-body clearfix">
-						<div class="pull-left">
-							<h3 class="widget-title text-warning"><span class="counter" data-plugin="counterUp">3.490</span>k</h3>
-							<small class="text-color">Total Pending</small>
-						</div>
-						<span class="pull-right big-icon watermark"><i class="fa fa-file-text-o"></i></span>
-					</div>
-					<footer class="widget-footer bg-warning">
-						<small>% charge</small>
-						<span class="small-chart pull-right" data-plugin="sparkline" data-options="[5,4,3,5,2],{ type: 'bar', barColor: '#ffffff', barWidth: 5, barSpacing: 2 }"></span>
-					</footer>
-				</div><!-- .widget -->
-			</div>
-		</div><!-- .row -->
-
-		<div class="row">
-			<div class="col-md-12">
-				<div class="widget row no-gutter p-lg">						
-					<div class="col-md-5 col-sm-5">
-						<div>
-							<h3 class="widget-title fz-lg text-primary m-b-lg">Sales in 2014</h3>
-							<p class="m-b-lg">Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits</p>
-							<p class="fs-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eum alias est vitae, obcaecati?</p>
-						</div>
-					</div>
-
-					<div class="col-md-7 col-sm-7">
-						<div>
-							<div id="lineChart" data-plugin="plot" data-options="
-								[
-									{
-										data: [[1,3.6],[2,3.5],[3,6],[4,4],[5,4.3],[6,3.5],[7,3.6]],
-										color: '#ffa000',
-										lines: { show: true, lineWidth: 6 },
-										curvedLines: { apply: true }
-									},
-									{
-										data: [[1,3.6],[2,3.5],[3,6],[4,4],[5,4.3],[6,3.5],[7,3.6]],
-										color: '#ffa000',
-										points: {show: true}
-									}
-								],
-								{
-									series: {
-										curvedLines: { active: true }
-									},
-									xaxis: {
-										show: true,
-										font: { size: 12, lineHeight: 10, style: 'normal', weight: '100',family: 'lato', variant: 'small-caps', color: '#a2a0a0' }
-									},
-									yaxis: {
-										show: true,
-										font: { size: 12, lineHeight: 10, style: 'normal', weight: '100',family: 'lato', variant: 'small-caps', color: '#a2a0a0' }
-									},
-									grid: { color: '#a2a0a0', hoverable: true, margin: 8, labelMargin: 8, borderWidth: 0, backgroundColor: '#fff' },
-									tooltip: true,
-									tooltipOpts: { content: 'X: %x.0, Y: %y.2',  defaultTheme: false, shifts: { x: 0, y: -40 } },
-									legend: { show: false }
-								}" style="width: 100%; height: 230px;">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="media">
+							<div class="media-body overflow-hidden">
+								<p class="text-truncate font-size-14 mb-2">Number of Sales</p>
+								<h4 class="mb-0">{{ $numberOfSales }}</h4>
+							</div>
+							<div class="text-primary">
+								<i class="ri-stack-line font-size-24"></i>
 							</div>
 						</div>
 					</div>
-				</div><!-- .widget -->	
-			</div>
-		</div><!-- .row -->
 
-		<div class="row">
-			<div class="col-md-7">
-				<div class="widget">
-					<header class="widget-header">
-						<h4 class="widget-title">Active Leads</h4>
-					</header>
-					<hr class="widget-separator"/>
-					<div class="widget-body">
-						<div class="table-responsive">							
-							<table class="table no-cellborder">
-								<thead>
-									<tr><th>Type</th><th>Lead Name</th><th>Views</th><th>Favorites</th><th>Last Visit</th><th>Last Action</th></tr>
-								</thead>
-								<tbody>
-									<tr><td class="text-primary">Buyer</td><td>Denise Ann</td><td>150</td><td>150</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-primary">Buyer</td><td>Denise Ann</td><td>150</td><td>202</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-success">Landlord</td><td>Denise Ann</td><td>150</td><td>313</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-primary">Buyer</td><td>Denise Ann</td><td>150</td><td>175</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-danger">Seller</td><td>Denise Ann</td><td>150</td><td>148</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-primary">Buyer</td><td>Denise Ann</td><td>150</td><td>1500</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-primary">Buyer</td><td>Denise Ann</td><td>150</td><td>1270</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-									<tr><td class="text-danger">Buyer</td><td>Denise Ann</td><td>150</td><td>3201</td><td>9:23 AM</td><td><span class="table-icon fa fa-envelope"></span> 11/9/2015</td></tr>
-								</tbody>
-							</table>
+					<div class="card-body border-top py-3">
+						<div class="text-truncate">
+							<span class="text-muted ml-2">Jumlah penjualan tiket</span>
 						</div>
 					</div>
-				</div><!-- .widget -->
-			</div><!-- END column -->
-
-			<div class="col-md-5">
-				<div class="widget todo-widget">
-					<header class="widget-header">
-						<h4 class="widget-title">Todo List</h4>
-					</header>
-					<hr class="widget-separator"/>
-					<div class="widget-body p-b-0">
-						<ul class="todo-list">
-							<li class="todo-item">
-								<div class="checkbox checkbox-default">
-									<input type="checkbox" id="checkbox02"/>
-									<label for="checkbox02">Record The First Episode Of HTML Tutorial</label>
-								</div>
-							</li><!-- .todo-item -->
-
-							<li class="todo-item">
-								<div class="checkbox checkbox-pink">
-									<input type="checkbox" id="checkbox2"/>
-									<label for="checkbox2">Prepare The Conference Schedule</label>
-								</div>
-							</li><!-- .todo-item -->
-
-							<li class="todo-item">
-								<div class="checkbox checkbox-warning">
-									<input type="checkbox" id="checkbox4" checked/>
-									<label for="checkbox4">Decide The Live Discussion Time</label>
-								</div>
-							</li><!-- .todo-item -->
-
-							<li class="todo-item">
-								<div class="checkbox checkbox-success">
-									<input type="checkbox" id="checkbox3" checked/>
-									<label for="checkbox3">Prepare For The Next Project</label>
-								</div>
-							</li><!-- .todo-item -->
-
-							<li class="todo-item">
-								<div class="checkbox checkbox-danger">
-									<input type="checkbox" id="checkbox5" checked/>
-									<label for="checkbox5">Finish Up AngularJs Tutorial</label>
-								</div>
-							</li><!-- .todo-item -->
-
-							<li class="todo-item">
-								<div class="checkbox checkbox-purple">
-									<input type="checkbox" id="checkbox1" checked/>
-									<label for="checkbox1">Finish Infinity Project</label>
-								</div>
-							</li><!-- .todo-item -->
-						</ul><!-- .todo-list -->
-					</div>
-					<div class="new-todo">
-						<input type="text" placeholder="add new task"/>
-					</div>
-					<footer class="widget-footer">
-						<a href="javascript:void(0)" class="btn btn-sm btn-success m-r-md">All</a>
-						<a href="javascript:void(0)" class="btn btn-sm btn-default">Archive</a>
-						<a href="javascript:void(0)" class="btn btn-sm btn-default pull-right">Clear completed</a>
-					</footer>
-				</div><!-- .widget -->
+				</div>
 			</div>
-		</div><!-- .row -->
-
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<div class="widget">
-					<header class="widget-header">
-						<h4 class="widget-title">Activities</h4>
-					</header>
-					<hr class="widget-separator" />
-					<div class="widget-body">
-						<div class="streamline">
-							<div class="sl-item sl-primary">
-								<div class="sl-content">
-									<small class="text-muted">23 mins ago</small>
-									<p>John has just started working on the project</p>
-								</div>
-							</div><!-- .sl-item -->
-
-							<div class="sl-item sl-danger">
-								<div class="sl-content">
-									<small class="text-muted">23 mins ago</small>
-									<p>Jane sent you invitation to attend the party</p>
-								</div>
-							</div><!-- .sl-item -->
-
-							<div class="sl-item sl-success">
-								<div class="sl-content">
-									<small class="text-muted">23 mins ago</small>
-									<p>Sally added you to her circles</p>
-								</div>
-							</div><!-- .sl-item -->
-
-							<div class="sl-item sl-warning">
-								<div class="sl-content">
-									<small class="text-muted">23 mins ago</small>
-									<p>Sara has finished her task</p>
-								</div>
-							</div><!-- .sl-item -->
-						</div><!-- .streamline -->
-					</div>
-				</div><!-- .widget -->
-			</div>
-
-			<div class="col-md-6 col-sm-6">
-				<div class="widget google-chart">
-					<header class="widget-header">
-						<h4 class="widget-title">Analytics</h4>
-					</header>
-					<hr class="widget-separator"/>
-					<div class="widget-body">
-						<div id="barChart" data-plugin="plot" data-options="
-							[
-								{
-									label: 'Users',
-									data: [[1,200],[2,400],[3,500],[4,700],[5,600],[6,400],[7,500],[8,400], [9, 320], [10, 380], [11, 500], [12, 700]],
-									bars: {show: true, fill: 1, fillColor: '#3f51b5', align: 'center', barWidth: .4}
-								}
-							],
-							{
-								series: {
-									bars: {show:  true}
-								},
-								xaxis: {
-									font: {size: 12, lineHeight: 10, style: 'normal', weight: '100',family: 'lato', variant: 'small-caps', color: '#a2a0a0' }
-								},
-								yaxis: {
-									max: 800,
-									font: {size: 12, lineHeight: 10, style: 'normal', weight: '100',family: 'lato', variant: 'small-caps', color: '#a2a0a0' }
-								},
-								legend: { show: false },
-								grid: { color: '#fff', labelMargin: 16, hoverable: true },
-								colors: ['#3f51b5'],
-								tooltip: {
-									show: true,
-									content: '<div><span>X: %x, Y: %y</span></div>',
-									defaultTheme: false
-								}
-							}" style="width: 100%; height: 220px;">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="media">
+							<div class="media-body overflow-hidden">
+								<p class="text-truncate font-size-14 mb-2">Sales Revenue</p>
+								<h4 class="mb-0">IDR {{ number_format($salesRevenue) }}</h4>
+							</div>
+							<div class="text-primary">
+								<i class="ri-store-2-line font-size-24"></i>
+							</div>
 						</div>
 					</div>
-				</div><!-- .widget -->
-			</div>
-		</div><!-- .row -->
-
-		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<div class="widget">
-					<header class="widget-header">
-						<h4 class="widget-title">Feeds</h4>
-					</header>
-					<hr class="widget-separator"/>
-					<div class="widget-body">
-						<div class="media-group feeds-group">
-
-							<div class="media-group-item">
-								<div class="media">
-									<div class="media-left">
-										<div class="avatar avatar-sm avatar-circle">
-											<img src="{{asset('assets/admin/images/217.jpg') }}" alt="">
-										</div>
-									</div>
-									<div class="media-body">
-										<h5><a href="javascript:void(0)" class="text-color">Some of the fantastic things people have had to say about Ooooh</a></h5>
-										<small class="text-muted">2 days ago</small>
-									</div>
-								</div>
-							</div><!-- .media-group-item -->
-
-							<div class="media-group-item">
-								<div class="media">
-									<div class="media-left">
-										<div class="avatar avatar-sm avatar-circle">
-											<img src="{{asset('assets/admin/images/218.jpg') }}" alt="">
-										</div>
-									</div>
-									<div class="media-body">
-										<h5><a href="javascript:void(0)" class="text-color">Here are just some of the magazine reviews we have had</a></h5>
-										<small class="text-muted">1 day ago</small>
-									</div>
-								</div>
-							</div><!-- .media-group-item -->
-
-							<div class="media-group-item">
-								<div class="media">
-									<div class="media-left">
-										<div class="avatar avatar-sm avatar-circle">
-											<img src="{{asset('assets/admin/images/219.jpg') }}" alt="">
-										</div>
-									</div>
-									<div class="media-body">
-										<h5><a href="javascript:void(0)" class="text-color">Lorem ipsum dolor amet, consectetur adipisicing elit.</a></h5>
-										<small class="text-muted">2 days ago</small>
-									</div>
-								</div>
-							</div><!-- .media-group-item -->
-
-							<div class="media-group-item">
-								<div class="media">
-									<div class="media-left">
-										<div class="avatar avatar-sm avatar-circle">
-											<img src="{{asset('assets/admin/images/215.jpg') }}" alt="">
-										</div>
-									</div>
-									<div class="media-body">
-										<h5><a href="javascript:void(0)" class="text-color">“It’s just brilliant. I will recommend it to everyone!”</a></h5>
-										<small class="text-muted">2 mins ago</small>
-									</div>
-								</div>
-							</div><!-- .media-group-item -->
-
-							<div class="media-group-item">
-								<div class="media">
-									<div class="media-left">
-										<div class="avatar avatar-sm avatar-circle">
-											<img src="{{asset('assets/admin/images/221.jpg') }}" alt="">
-										</div>
-									</div>
-									<div class="media-body">
-										<h5><a href="javascript:void(0)" class="text-color">John has just started working on the project</a></h5>
-										<small class="text-muted">right now</small>
-									</div>
-								</div>
-							</div><!-- .media-group-item -->
+					<div class="card-body border-top py-3">
+						<div class="text-truncate">
+							<span class="text-muted ml-2">Jumlah pendapatan</span>
 						</div>
 					</div>
-				</div><!-- .widget -->
+				</div>
 			</div>
-
-			<div class="col-md-6 col-sm-6">
-				<div class="widget">
-					<header class="widget-header">
-						<h4 class="widget-title">Streams</h4>
-					</header>
-					<hr class="widget-separator"/>
-					<div class="widget-body">
-						<div class="streamline m-l-lg">
-							<div class="sl-item p-b-md">
-								<div class="sl-avatar avatar avatar-sm avatar-circle">
-									<img class="img-responsive" src="{{asset('assets/admin/images/221.jpg') }}" alt="avatar"/>
-								</div><!-- .avatar -->
-								<div class="sl-content m-l-xl">
-									<h5 class="m-t-0"><a href="javascript:void(0)" class="m-r-xs theme-color">John Doe</a><small class="text-muted fz-sm">last month</small></h5>
-									<p>John has just started working on the project</p>
-								</div>
-							</div><!-- .sl-item -->
-
-							<div class="sl-item p-b-md">
-								<div class="sl-avatar avatar avatar-sm avatar-circle">
-									<img class="img-responsive" src="{{asset('assets/admin/images/214.jpg') }}" alt="avatar"/>
-								</div><!-- .avatar -->
-								<div class="sl-content m-l-xl">
-									<h5 class="m-t-0"><a href="javascript:void(0)" class="m-r-xs theme-color">Jane Doe</a><small class="text-muted fz-sm">last month</small></h5>
-									<p>Jane sent you invitation to attend the party</p>
-								</div>
-							</div><!-- .sl-item -->
-
-							<div class="sl-item p-b-md">
-								<div class="sl-avatar avatar avatar-sm avatar-circle">
-									<img class="img-responsive" src="{{asset('assets/admin/images/217.jpg') }}" alt="avatar"/>
-								</div><!-- .avatar -->
-								<div class="sl-content m-l-xl">
-									<h5 class="m-t-0"><a href="javascript:void(0)" class="m-r-xs theme-color">Sally Mala</a><small class="text-muted fz-sm">last month</small></h5>
-									<p>Sally added you to her circles</p>
-								</div>
-							</div><!-- .sl-item -->
-
-							<div class="sl-item p-b-md">
-								<div class="sl-avatar avatar avatar-sm avatar-circle">
-									<img class="img-responsive" src="{{asset('assets/admin/images/211.jpg') }}" alt="avatar"/>
-								</div><!-- .avatar -->
-								<div class="sl-content m-l-xl">
-									<h5 class="m-t-0"><a href="javascript:void(0)" class="m-r-xs theme-color">Sara Adams</a><small class="text-muted fz-sm">last month</small></h5>
-									<p>Sara has finished her task</p>
-								</div>
-							</div><!-- .sl-item -->
-							<div class="sl-item p-b-md">
-								<div class="sl-avatar avatar avatar-sm avatar-circle">
-									<img class="img-responsive" src="{{asset('assets/admin/images/214.jpg') }}" alt="avatar"/>
-								</div><!-- .avatar -->
-								<div class="sl-content m-l-xl">
-									<h5 class="m-t-0"><a href="javascript:void(0)" class="m-r-xs theme-color">Sandy Doe</a><small class="text-muted fz-sm">last month</small></h5>
-									<p>Sara has finished her task</p>
-								</div>
-							</div><!-- .sl-item -->
-						</div><!-- .streamline -->
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-body">
+						<div class="media">
+							<div class="media-body overflow-hidden">
+								<p class="text-truncate font-size-14 mb-2">Average Revenue</p>
+								<h4 class="mb-0">IDR {{ number_format($averageRevenue) }}</h4>
+							</div>
+							<div class="text-primary">
+								<i class="ri-briefcase-4-line font-size-24"></i>
+							</div>
+						</div>
 					</div>
-				</div><!-- .widget -->
-			</div>
-		</div><!-- .row -->
-
-		<div class="row">
-			<div class="col-md-12">
-				<div class="widget widget-pie-chart">
-					<header class="widget-header">
-						<h4 class="widget-title">ACTIVITIES</h4>
-					</header>
-					<hr class="widget-separator"/>
-					<div class="widget-body clearfix">
-						<div data-plugin="chart" data-options="{
-		              tooltip : {
-		                  trigger: 'axis'
-		              },
-		              legend: {
-		                  data:['Max','Min']
-		              },
-		              calculable : true,
-		              xAxis : [
-		                  {
-		                      type : 'category',
-		                      boundaryGap : false,
-		                      data : ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-		                  }
-		              ],
-		              yAxis : [
-		                  {
-		                      type : 'value',
-		                      axisLabel : {
-		                          formatter: '{value} °C'
-		                      }
-		                  }
-		              ],
-		              series : [
-		                  {
-		                      name:'Max',
-		                      type:'line',
-		                      data:[9, 9, 13, 11, 10, 11, 8],
-		                      markPoint : {
-		                          data : [
-		                              {type : 'max', name: 'Max'},
-		                              {type : 'min', name: 'Min'}
-		                          ]
-		                      },
-		                      markLine : {
-		                          data : [
-		                              {type : 'average', name: 'Average'}
-		                          ]
-		                      }
-		                  },
-		                  {
-		                      name:'Min',
-		                      type:'line',
-		                      data:[1, -3, 2, 5, 3, 4, 0],
-		                      markPoint : {
-		                          data : [
-		                              {name : 'Min of Week', value : -3, xAxis: 1, yAxis: -1.5}
-		                          ]
-		                      },
-		                      markLine : {
-		                          data : [
-		                              {type : 'average', name : 'Average'}
-		                          ]
-		                      }
-		                  }
-		              ]
-		            }" style="height: 300px;">
+					<div class="card-body border-top py-3">
+						<div class="text-truncate">
+							<span class="text-muted ml-2">Rata rata pendapatan</span>
+						</div>
 					</div>
-				</div><!-- .widget -->
+				</div>
 			</div>
-		</div><!-- .row -->
+		</div>
+		<!-- end row -->
+
+		<div class="card">
+			<div class="card-body">
+				<div class="float-right d-none d-md-inline-block">
+					<div class="btn-group mb-2">
+						<button type="button" class="btn btn-sm btn-light">Today</button>
+						<button type="button" class="btn btn-sm btn-light active">Weekly</button>
+						<button type="button" class="btn btn-sm btn-light">Monthly</button>
+					</div>
+				</div>
+				<h4 class="card-title mb-4">Revenue Analytics</h4>
+				<div>
+					<div id="revenue-analytics" class="apex-charts" dir="ltr"></div>
+				</div>
+			</div>
+
+			<div class="card-body border-top text-center">
+				<div class="row">
+					<div class="col-sm-4"></div>
+
+					<div class="col-sm-4">
+						<div class="mt-4 mt-sm-0">
+							<p class="mb-2 text-muted text-truncate">
+								<i class="mdi mdi-circle text-success font-size-10 mr-1">
+								</i> Revenue On This Year :</p>
+							<div class="d-inline-flex">
+								<h5 class="mb-0">$ 32,695</h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="mt-4 mt-sm-0">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xl-4">
+
+		<div class="card">
+			<div class="card-body">
+
+				<h4 class="card-title mb-4">Earning Reports</h4>
+				<div class="text-center">
+					<div class="row">
+						<div class="col-sm-6">
+							<div>
+								<div class="mb-3">
+									<div id="weekly-earning" class="apex-charts"></div>
+								</div>
+
+								<p class="text-muted text-truncate mb-2">Weekly Earnings</p>
+								<h5 class="mb-0">IDR {{ number_format($weeklyEarning) }}</h5>
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<div class="mt-5 mt-sm-0">
+								<div class="mb-3">
+									<div id="montly-earning" class="apex-charts"></div>
+								</div>
+
+								<p class="text-muted text-truncate mb-2">Monthly Earnings</p>
+								<h5 class="mb-0">IDR {{ number_format($monthEarning) }}</h5>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-body">
+
+				<h4 class="card-title mb-4">Ticket Reports</h4>
+				<div class="text-center">
+					<div class="row">
+						@foreach($schedulles as $schedulle)
+						<div class="col-sm-6">
+							<div>
+								<div class="mb-3">
+									<div id="schedulle{{ $schedulle->id }}" class="apex-charts"></div>
+								</div>
+
+								<p class="text-muted text-truncate mb-2">{{ Str::limit($schedulle->destination->name, 14) }}</p>
+								<h5 class="mb-0">IDR {{ number_format($schedulle['amount']) }}</h5>
+							</div>
+							<hr>
+						</div>
+						@endforeach
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end row -->
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="card">
+			<div class="card-body">
+
+				<h4 class="card-title mb-4">Latest Transactions</h4>
+
+				<div class="table-responsive">
+					<table class="table table-centered datatable dt-responsive nowrap" data-page-length="5" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+						<thead class="thead-light">
+							<tr>
+								<th style="width: 20px;">
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="ordercheck">
+										<label class="custom-control-label" for="ordercheck">&nbsp;</label>
+									</div>
+								</th>
+								<th>Code</th>
+                                <th>Reference</th>
+                                <th>User</th>
+                                <th>Payment</th>
+                                <th>Schedule</th>
+                                <th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach($tickets as $ticket)
+							<tr>
+								<td>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="ordercheck1">
+										<label class="custom-control-label" for="ordercheck1">&nbsp;</label>
+									</div>
+								</td>
+
+								<td><a href="javascript: void(0);" class="text-dark font-weight-bold">#{{ $ticket->code }}</a> </td>
+								<td>{{ $ticket->reference }}</td>
+                                <td>{{ $ticket->user->name }}</td>
+                                <td>{{ $ticket->payment->name }}</td>
+                                <td>{{ $ticket->schedulle->id }}</td>
+								<td>
+									<div class="badge badge-soft-success font-size-12">{{ $ticket->approval }}</div>
+								</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end row -->
+@endsection
+@push('css')
+<!-- jquery.vectormap css -->
+<link href="{{ asset('assets/admin/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
+@endpush
+@push('js')
+<!-- apexcharts -->
+<script src="{{ asset('assets/admin/libs/apexcharts/apexcharts.min.js') }}"></script>
+
+<!-- jquery.vectormap map -->
+<script src="{{ asset('assets/admin/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+<script src="{{ asset('assets/admin/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js') }}"></script>
+
+<!-- Required datatable js -->
+<script src="{{ asset('assets/admin/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/admin/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Responsive examples -->
+<script src="{{ asset('assets/admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
+
+{{-- <script src="{{ asset('assets/admin/js/pages/dashboard.init.js') }}"></script> --}}
+
+<script>
+	// Revenue Analytics
+	var options = {
+		series: [
+			<?php
+				foreach (revenue() as $i) {
+				$data = json_encode([$i[1],$i[2],$i[3],$i[4],$i[5],$i[6],$i[7],$i[8],$i[9],$i[10],$i[11],$i[12]]);
+			?>
+				{ name: "{{ $i['year'] }}", type: "column", data: {{ $data}} },
+			<?php } ?>
+		],
+		chart: { height: 280, type: "line", toolbar: { show: !1 } },
+		stroke: { width: [0, 3, 3], curve: "smooth" },
+		plotOptions: { bar: { horizontal: !1, columnWidth: "20%" } },
+		dataLabels: { enabled: !1 },
+		legend: { show: !1 },
+		colors: ["#5664d2", "#1cbb8c", "#d33434"],
+		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+	},
+
+	chart = new ApexCharts(document.querySelector("#revenue-analytics"), options);
+	chart.render();
+
+	// Earnings Report
+	var radialoptions = { series: [100], chart: { type: "radialBar", wight: 60, height: 60, sparkline: { enabled: !0 } }, dataLabels: { enabled: !1 }, colors: ["#e84545"], stroke: { lineCap: "round" }, plotOptions: { radialBar: { hollow: { margin: 0, size: "70%" }, track: { margin: 0 }, dataLabels: { show: !1 } } } },
+	radialchart = new ApexCharts(document.querySelector("#weekly-earning"), radialoptions);
+	radialchart.render();
+	(radialchart = new ApexCharts(document.querySelector("#montly-earning"), radialoptions)).render();
+
+	// Ticket Report
+	@foreach($schedulles as $schedulle)
+		var schedulleoptions = { series: [100], chart: { type: "radialBar", wight: 60, height: 60, sparkline: { enabled: !0 } }, dataLabels: { enabled: !1 }, colors: ["#5664d2"], stroke: { lineCap: "round" }, plotOptions: { radialBar: { hollow: { margin: 0, size: "70%" }, track: { margin: 0 }, dataLabels: { show: !1 } } } },
+		radialchart = new ApexCharts(document.querySelector("#schedulle{{ $schedulle->id }}"), schedulleoptions);
+		radialchart.render();
+	@endforeach
+</script>
+@endpush

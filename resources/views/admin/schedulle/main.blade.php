@@ -63,7 +63,7 @@ use Carbon\Carbon;
 								<td>IDR {{ number_format($row->bussiness_price) }}</td>
 								<td>IDR {{ number_format($row->first_price) }}</td>
 								<td>
-									<a href="{{ route('admin.schedulle.update', $row->id) }}" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+									<a href="{{ route('admin.schedulle.pessenger', $row->id) }}" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
 										<button type="button" class="btn btn-info waves-effect waves-light">
 											<i class="mdi mdi-arrow-right font-size-18"></i>
 											Show Pessenger
@@ -71,7 +71,7 @@ use Carbon\Carbon;
 									</a>
 								</td>
 								<td>
-									<a href="{{ route('admin.schedulle.update', $row->id) }}" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+									<a href="{{ route('admin.schedulle.updater', $row->id) }}" class="mr-3 text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
 										<i class="mdi mdi-pencil font-size-18"></i>
 									</a>
 

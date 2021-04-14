@@ -20,7 +20,7 @@
 									<select class="custom-select select2" id="transportation" name="transportation_id">
 										<option selected disabled="">Open this plane list</option>
 										@foreach($transportation as $row)
-											<option @if(!empty($data)) @if($data->transportation_id == $row->id) selected="" @endif @endif value="{{ $row->id }}">{{ $row->name }}</option>
+										<option @if(!empty($data)) @if($data->transportation_id == $row->id) selected="" @endif @endif value="{{ $row->id }}">{{ $row->name }}</option>
 										@endforeach
 									</select>
 									<div class="valid-tooltip">
@@ -201,7 +201,7 @@
 		                cache: true
 		            },
 
-	        	});
+		        });
 
 				$("#destination").select2({
 					tags: [],
@@ -228,7 +228,7 @@
 		                },
 		                cache: true
 		            }
-	        	});
+		        });
 
 				$("#destination").on('change', function() {
 					calculateDistance();
@@ -238,27 +238,33 @@
 					var idTransportation = $('#transportation').val();
 					var from = $('#from').val();
 					var destination = $('#destination').val();
-				// alert(from);
-				$.ajax({
-					url: '{{ route('admin.ajax.distance.price') }}',
-					type: 'POST',
-					dataType: 'json',
-					data: {
-						idTransportation: idTransportation,
-						from: from,
-						destination: destination,
-					},
-					success: function(result){
-						$('#economy_price').val(result.economy_price.toLocaleString());
-						$('#bussiness_price').val(result.bussiness_price.toLocaleString());
-						$('#first_price').val(result.first_price.toLocaleString());
-						toastr["success"]("Calculate Of Distance & Price Successfully", "Success");
-						// alert(result.economy_price);
-					},
-					error: function(error){
-						toastr["error"](error, "Failed");
+				// alert(idTransportation);
+					if (idTransportation == null) {
+						toastr["error"]("Please Choose A Transportation", "Error");
+					}else if(from == null){
+						toastr["error"]("Please Choose A Take Off Airport Data", "Errpr");
+					}else {
+						$.ajax({
+							url: '{{ route('admin.ajax.distance.price') }}',
+							type: 'POST',
+							dataType: 'json',
+							data: {
+								idTransportation: idTransportation,
+								from: from,
+								destination: destination,
+							},
+							success: function(result){
+								$('#economy_price').val(result.economy_price.toLocaleString());
+								$('#bussiness_price').val(result.bussiness_price.toLocaleString());
+								$('#first_price').val(result.first_price.toLocaleString());
+								toastr["success"]("Calculate Of Distance & Price Successfully", "Success");
+								// alert(result.economy_price);
+							},
+							error: function(error){
+								toastr["error"](error, "Calculate Of Distance & Price Failed");
+							}
+						});
 					}
-				});
 			}
 		});
 	</script>

@@ -22,8 +22,8 @@ class PaymentSeeder extends Seeder
                 ], [
                     'name'         => $channel['name'],
                     'group'        => $channel['group'],
-                    'fee_flat'     => $channel['fee']['flat'],
-                    'fee_percent'  => $channel['fee']['percent'],
+                    'fee_flat'     => $channel['total_fee']['flat'],
+                    'fee_percent'  => $channel['total_fee']['percent'],
                     'deactived_at' => $channel['active'] == true ? NULL : now()
                 ]);
             }

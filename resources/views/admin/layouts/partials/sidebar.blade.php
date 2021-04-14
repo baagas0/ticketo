@@ -34,13 +34,6 @@
                 <li class="menu-title">Data</li>
 
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" class="waves-effect">
-                        <i class="ri-map-pin-user-line"></i>
-                        <span>Passenger</span>
-                    </a>
-                </li>
-
-                <li>
                     <a hidden="" href="{{ route('admin.dashboard') }}" class="waves-effect">
                         <i class="ri-road-map-line"></i>
                         <span>Rute</span>

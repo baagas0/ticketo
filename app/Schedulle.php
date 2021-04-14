@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Booking;
 
 class Schedulle extends Model
 {
@@ -25,5 +26,10 @@ class Schedulle extends Model
     public function destination()
     {
         return $this->belongsTo('App\Airport', 'destination_code');
+    }
+
+    public function getAmountAttribute(){
+        $amount = Booking::where('schedulle_id', $this->id)->sum('total');
+        return $amount;
     }
 }

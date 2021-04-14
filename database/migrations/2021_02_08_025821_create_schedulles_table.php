@@ -16,7 +16,7 @@ class CreateSchedullesTable extends Migration
         Schema::create('schedulles', function (Blueprint $table) {
             $table->id()->unsigned();
             $table->foreignId('transportation_id');
-            $table->string('image');
+            $table->string('image')->default('assets/landing/images/city.jpg');
             $table->datetime('date');
             $table->integer('from_code');
             $table->foreignId('destination_code');
